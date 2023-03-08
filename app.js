@@ -175,7 +175,7 @@ if (port == null || port == "") {
 }
 app.listen(port, function () {
   console.log("Server has started successfully");
-}));
+});
 
 //app.listen(process.env.PORT||3000, function() {
 //  console.log("Server started on port 3000");
