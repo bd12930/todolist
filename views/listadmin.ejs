@@ -6,7 +6,7 @@
 
   <div class="box">
   <% newListItems.forEach(function(listItem){ %>
-  <form action="/delete" method="post">
+  <form action="/completed" method="post">
       <div class="item">
         <% if (listItem.topic){ %>
            <input type="checkbox" name="checkbox" value="<%=listItem._id%>" onChange="this.form.submit()">
@@ -15,7 +15,16 @@
       </div>
     <input type="hidden" name="listItem" value="<%= listItem.name %>"></input>
     <input type="hidden" name="listTimestamp" value="<%= listItem.timestamp %>"></input>
+    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
     </form>
 <% }) %>
+
+      <form class="item" action="/admin" method="post">
+        <input type="checkbox" name="topic" value="aa">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="list" value="<%= listTitle %>">+</button>
+      </form>
+
+  </div>
 
 <%- include("footer") -%>

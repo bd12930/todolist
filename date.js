@@ -1,5 +1,17 @@
 //jshint esversion:6
 
+exports.getTime = function () {
+
+    const today = new Date();
+
+    const options = {
+        
+    };
+
+    return today.toLocaleString();
+
+};
+
 exports.getDate = function() {
 
   const today = new Date();
